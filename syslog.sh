@@ -6,6 +6,6 @@ until netstat -px | grep -s -E '^unix[^/]+/syslog' >/dev/null; do
   sleep .1
 done
 
-nc -lk -p 514 -u | logger &
+echo -n | nc -lk -p 514 -u | logger &
 
 exec logread -f
