@@ -1,6 +1,6 @@
 #!/bin/sh
 
-syslogd -C
+syslogd -n -C &
 
 until netstat -px | grep -s -E '^unix[^/]+/syslog' >/dev/null; do
   sleep .1
